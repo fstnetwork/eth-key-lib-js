@@ -6,7 +6,7 @@ import signTransaction from "./lib/signTransaction";
 export const CreatePrivateKeyHexString = createPrivateKeyHexString;
 export const CreateEthereumKeyJson = createEthereumKeyJson;
 export const DecryptEthereumKeyJson = decryptEthereumKeyJson;
-export const SignTransaction = signTransaction ;
+export const SignTransaction = signTransaction;
 
 // const pk = createPrivateKeyHexString();
 // const keyJson = createEthereumKeyJson("12241224fuck", pk);
