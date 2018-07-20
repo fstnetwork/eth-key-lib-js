@@ -10481,6 +10481,7 @@
   function(e, t, r) {
     "use strict";
     Object.defineProperty(t, "__esModule", { value: !0 }),
+      (t.TestEthKeyLib = d),
       (t.SignTransaction = t.DecryptEthereumKeyJson = t.CreateEthereumKeyJson = t.CreatePrivateKeyHexString = void 0);
     var n = f(r(81)),
       i = f(r(186)),
@@ -10496,12 +10497,41 @@
     var u = o.default;
     t.DecryptEthereumKeyJson = u;
     var h = a.default;
+    function d() {
+      var e = (0, n.default)(),
+        t = (0, i.default)("!!321iamastrongpassphrase123!!", e),
+        r = (0, o.default)(t, "!!321iamastrongpassphrase123!!");
+      console.log("The private key is", e),
+        console.log("The key json is", JSON.stringify(t, null, 2)),
+        console.log(
+          "The decrypted wallet obj from the key json is",
+          JSON.stringify(r, null, 2)
+        ),
+        console.log(
+          "The decrypted privatekey from the key json is",
+          "0x" + r.privateKeyBuffer.toString("hex")
+        ),
+        console.log(
+          "The signed transaction hex string is",
+          (0, a.default)(r.privateKeyBuffer, {
+            chainId: 42,
+            data: "0x",
+            gas: "0x5208",
+            gasPrice: "0x3b9aca00",
+            nonce: "0xed",
+            to: "0x1211ef4E91607766a19e544a2F8d0CA68837cAd0",
+            value: "0xc12dc63fa970000"
+          })
+        );
+    }
     (t.SignTransaction = h),
       "undefined" != typeof self &&
-        ((self.eth_key_lib_CreatePrivateKeyHexString = n.default),
-        (self.eth_key_lib_CreateEthereumKeyJson = i.default),
-        (self.eth_key_lib_DecryptEthereumKeyJson = o.default),
-        (self.eth_key_lib_SignTransaction = a.default));
+        ((self.EthKeyLibBrowser = {}),
+        (self.EthKeyLibBrowser.CreatePrivateKeyHexString = n.default),
+        (self.EthKeyLibBrowser.CreateEthereumKeyJson = i.default),
+        (self.EthKeyLibBrowser.DecryptEthereumKeyJson = o.default),
+        (self.EthKeyLibBrowser.SignTransaction = a.default),
+        (self.EthKeyLibBrowser.TestEthKeyLib = d));
   },
   function(e, t, r) {
     "use strict";
