@@ -8,15 +8,32 @@ export const CreateEthereumKeyJson = createEthereumKeyJson;
 export const DecryptEthereumKeyJson = decryptEthereumKeyJson;
 export const SignTransaction = signTransaction;
 
-// const pk = createPrivateKeyHexString();
-// const keyJson = createEthereumKeyJson("12241224fuck", pk);
+if (!(typeof self === "undefined")) {
+  self.eth_key_lib_CreatePrivateKeyHexString = createPrivateKeyHexString;
+  self.eth_key_lib_CreateEthereumKeyJson = createEthereumKeyJson;
+  self.eth_key_lib_DecryptEthereumKeyJson = decryptEthereumKeyJson;
+  self.eth_key_lib_SignTransaction = signTransaction;
+}
 
-// console.error(pk);
-// console.log(JSON.stringify(keyJson, null, 2));
-// console.error(decryptEthereumKeyJson(keyJson, "12241224fuck"));
-// console.error(
+// Code sample:
+//
+// const pk = createPrivateKeyHexString();
+// const keyJson = createEthereumKeyJson("!!321iamastrongpassphrase123!!", pk);
+
+// console.log("The private key is", pk);
+// console.log("The key json is", JSON.stringify(keyJson, null, 2));
+// console.log(
+//   "The decrypted privatekey the from key json is",
+//   "0x" +
+//     decryptEthereumKeyJson(
+//       keyJson,
+//       "!!321iamastrongpassphrase123!!"
+//     ).privateKeyBuffer.toString("hex")
+// );
+// console.log(
 //   signTransaction(
-//     decryptEthereumKeyJson(keyJson, "12241224fuck").privateKeyBuffer,
+//     decryptEthereumKeyJson(keyJson, "!!321iamastrongpassphrase123!!")
+//       .privateKeyBuffer,
 //     {
 //       chainId: 42,
 //       data: "0x",
