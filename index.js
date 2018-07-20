@@ -23,7 +23,7 @@ if (!(typeof self === "undefined")) {
 // console.log("The private key is", pk);
 // console.log("The key json is", JSON.stringify(keyJson, null, 2));
 // console.log(
-//   "The decrypted privatekey the from key json is",
+//   "The decrypted privatekey from the key json is",
 //   "0x" +
 //     decryptEthereumKeyJson(
 //       keyJson,
