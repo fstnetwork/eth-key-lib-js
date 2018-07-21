@@ -10500,7 +10500,7 @@
     function d() {
       var e = (0, n.default)(),
         t = (0, i.default)("!!321iamastrongpassphrase123!!", e),
-        r = (0, o.default)(t, "!!321iamastrongpassphrase123!!");
+        r = (0, o.default)("!!321iamastrongpassphrase123!!", t);
       console.log("The private key is", e),
         console.log("The key json is", JSON.stringify(t, null, 2)),
         console.log(
@@ -21623,7 +21623,7 @@
       (t.default = function(e, t) {
         var r = null;
         try {
-          var i = (0, n.fromV3)(e, t);
+          var i = (0, n.fromV3)(t, e);
           r = {
             privateKeyBuffer: i.getPrivateKey(),
             addressString: "0x" + i.getAddress().toString("hex"),
