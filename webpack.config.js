@@ -3,7 +3,9 @@ const path = require("path");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: "./index.js",
+  entry: {
+    main: ["@babel/polyfill", "./index.js"]
+  },
   plugins: [new CleanWebpackPlugin(["dist"])],
   module: {
     rules: [
@@ -18,7 +20,7 @@ module.exports = {
                 "@babel/preset-env",
                 {
                   targets: {
-                    browsers: ["last 2 versions", "safari >= 7"]
+                    browsers: ["> 5%"]
                   }
                 }
               ]
