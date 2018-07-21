@@ -13,8 +13,8 @@ export function TestEthKeyLib() {
   const pk = createPrivateKeyHexString();
   const keyJson = createEthereumKeyJson("!!321iamastrongpassphrase123!!", pk);
   const decryptedWalletObj = decryptEthereumKeyJson(
-    keyJson,
-    "!!321iamastrongpassphrase123!!"
+    "!!321iamastrongpassphrase123!!",
+    keyJson
   );
 
   console.log("The private key is", pk);
