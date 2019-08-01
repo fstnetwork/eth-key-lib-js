@@ -4,10 +4,10 @@ This repository contains the essential helper functions for creating ethereum ke
 
 ## Installation
 
-    npm i "https://github.com/funderstoken/eth-key-lib-js"
+    npm i "https://github.com/fstnetwork/eth-key-lib-js"
 or
 
-	yarn add "https://github.com/funderstoken/eth-key-lib-js"
+	yarn add "https://github.com/fstnetwork/eth-key-lib-js"
 or (in browser)
 
 	<script src="dist/eth-key-lib-js-browser.js"></script>
